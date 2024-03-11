@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation</title>
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/simulate.css">
+    <link rel="stylesheet" href="../assests/audios/audio1.mp3">
+</head>
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+    </header>
+
+   
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav__logo">
+                    <i class='bx bx-layer nav__logo-icon'></i>
+                    <span class="nav__logo-name">Virtual Labs</span>
+                </a>
+    
+                <div class="nav__list">
+                    <a href="#" class="nav__link "  onmouseover="playhover()">
+                        <i class='bx bxs-info-circle' onclick="window.location.href='./introduction.html'" ></i>
+                        <span class="nav__name"   onclick="window.location.href='./introduction.html'">Introduction</span>
+                    </a>
+    
+                    <a href="#" class="nav__link active" onmouseover="playhover()">
+                        <i class='bx bx-book-bookmark'onclick="window.location.href='./Theory.html'"></i>
+                        <span class="nav__name" onclick="window.location.href='./Theory.html'">Theory</span>
+                    </a>
+    
+                    <a href="#" class="nav__link "  onmouseover="playhover()">
+                        <i class='bx bx-laptop' onclick="window.location.href='./simulation.html'"></i>
+                        <span class="nav__name" onclick="window.location.href='./simulation.html'">Simulation</span>
+                    </a>
+                    <a href="#" class="nav__link "  onmouseover="playhover()">
+                        <i class='bx bx-brain'   onclick="window.location.href='./quiz.html'" ></i>
+                        <span class="nav__name"    onclick="window.location.href='./quiz.html'">Quiz</span>
+                    </a>
+                    <a href="#" class="nav__link" onmouseover="playhover()">
+                        <i class='bx bxs-message-rounded-detail' onclick="window.location.href='https://t.me/LabBot_ai'"></i>
+                        <span class="nav__name" onclick="window.location.href='https://t.me/LabBot_ai'">Chatbot</span>
+                    </a>
+    
+    
+                    <a href="#" class="nav__link"  onmouseover="playhover()">
+                        <i class='bx bxs-help-circle' onclick="window.location.href='./faq.html'"></i>
+                        <span class="nav__name"  onclick="window.location.href='./faq.html'">FAQ</span>
+                    </a>
+                </div>
+            </div>
+    
+            <a href="#" class="nav__link" onmouseover="playudio()">
+                <i class='bx bx-log-out nav__icon' onmouseover="playhover()"></i>
+                <span class="nav__name" onclick="window.location.href='/index.html'">Log Out</span>
+            </a>
+        </nav>
+    </div>
+  
+    <audio id="buttonaudio" src="../assests/audios/cliccks.mp3"></audio>
+    <audio id="buttonhover" src="../assests/audios/hovvers.mp3"></audio>
+
+    
+    <script>
+        function playclick() {
+            var audio = document.getElementById('buttonaudio');
+            audio.play();
+        }
+
+        function playhover() {
+            var audio = document.getElementById('buttonhover');
+            audio.play();
+        }
+    </script>
+    
+    <div class="workspace">
+        <div class="playground">
+            <div class="leftside">
+                <div class="diag">
+                    <!-- yaha transmitter aayega antenna  -->
+                    <div class="transmitter-box">
+                        <img src="../assests/img/a0342be89815269be3065e4f83b0c97c-removebg-preview.png" alt="Transmitter">
+                    </div>
+        
+                    <!-- yaha ladka aayega  -->
+                    <div class="receiver-box" id="movable-box">
+                        <img src="../assests/img/1000_F_447440420_IZdm3fynK163vqRl4XqeB6769wrRVxc8-removebg-preview.png" alt="Receiver">
+                    </div>
+                    
+                </div>
+            </div>
+        
+            <div class="reading">
+                <div id="distance-display">Distance: 0.00 meters</div><br>
+                <div id="signal-strength-display">Signal Strength: Calculating...</div><br>
+                <div class="button-playground">
+                    <button id="calculate-button">Calculate</button>
+                    <button id="take-reading-button">Take Reading</button>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="downside">
+        <div class="para">
+            <div class="reading-table">
+                <table id="readings-table">
+                    <thead>
+                        <tr>
+                            <th>Serial</th>
+                            <th>Transmitter Power (dBm)</th>
+                            <th>Path Loss Exponent</th>
+                            <th>Carrier Frequency (Hz)</th>
+                            <th>Receiver Antenna Height (meters)</th>
+                            <th>Transmitter Antenna Height (meters)</th>
+                            <th>Distance (meters)</th>
+                            <th>Signal Strength (dBm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Reading rows will be added dynamically here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="observation">
+                <div class="inputpara">
+                    <label for="transmitter-power">Transmitter Power (dBm):</label><br><br>
+                    <label for="pathloss-exponent">Path Loss Exponent:</label><br><br>
+                    <label for="carrier-frequency">Carrier Frequency (Hz):</label><br><br>
+                    <label for="receiver-height">Receiver Antenna Height (meters):</label><br><br>
+                    <label for="transmitter-height">Transmitter Antenna Height (meters):</label>
+                </div>
+                <div class="inputvalue">
+                    <input type="number" id="transmitter-power" value="20"><br>
+                    <input type="number" id="pathloss-exponent" value="2"><br>
+                    <input type="number" id="carrier-frequency" value="2.4e9"><br>
+                    <input type="number" id="receiver-height" value="1"><br>
+                    <input type="number" id="transmitter-height" value="1"><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="../javascript/simulation.js"></script>
+</body>
+
+</html>

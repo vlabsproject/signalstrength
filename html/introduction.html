@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== BOX ICONS ===== -->
+         <!-- These 3 links are only for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <!-- ===== CSS ===== -->
+        <!-- <link rel="stylesheet" href="../css/introductionquiz.css"> -->
+        <link rel="stylesheet" href="../css/introduction.css">
+
+        <title>introduction</title>
+        
+    </head>
+     
+
+ <!-- Info Box -->
+
+ <body id="body-pd">
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+    </header>
+
+   
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav__logo">
+                    <i class='bx bx-layer nav__logo-icon'></i>
+                    <span class="nav__logo-name">Virtual Labs</span>
+                </a>
+    
+                <div class="nav__list">
+                    <a href="#" class="nav__link active"  onmouseover="playhover()">
+                        <i class='bx bxs-info-circle' onclick="window.location.href='./introduction.html'" ></i>
+                        <span class="nav__name"   onclick="window.location.href='./introduction.html'">Introduction</span>
+                    </a>
+    
+                    <a href="#" class="nav__link " onmouseover="playhover()">
+                        <i class='bx bx-book-bookmark' onclick="window.location.href='./Theory.html'"></i>
+                        <span class="nav__name" onclick="window.location.href='./Theory.html'">Theory</span>
+                    </a>
+    
+                    <a href="#" class="nav__link "  onmouseover="playhover()">
+                        <i class='bx bx-laptop'onclick="window.location.href='./simulation.html'" ></i>
+                        <span class="nav__name" onclick="window.location.href='./simulation.html'">Simulation</span>
+                    </a>
+                    <a href="#" class="nav__link "  onmouseover="playhover()">
+                        <i class='bx bx-brain' onclick="window.location.href='./quiz.html'"></i>
+                        <span class="nav__name"    onclick="window.location.href='./quiz.html'">Quiz</span>
+                    </a>
+                    <a href="#" class="nav__link" onmouseover="playhover()">
+                        <i class='bx bxs-message-rounded-detail' onclick="window.location.href='https://t.me/LabBot_ai'"></i>
+                        <span class="nav__name" onclick="window.location.href='https://t.me/LabBot_ai'">Chatbot</span>
+                    </a>
+    
+    
+                    <a href="#" class="nav__link "  onmouseover="playhover()">
+                        <i class='bx bxs-help-circle'onclick="window.location.href='./faq.html'"></i>
+                        <span class="nav__name"  onclick="window.location.href='./faq.html'">FAQ</span>
+                    </a>
+                </div>
+          
+            </div>
+    
+            <a href="#" class="nav__link" onmouseover="playudio()">
+                <i class='bx bx-log-out nav__icon' onmouseover="playhover()"></i>
+                <span class="nav__name" onclick="window.location.href='/index.html'">Log Out</span>
+            </a>
+        </nav>
+    </div>
+    
+    <audio id="buttonudio" src="../assests/audios/cliccks.mp3"></audio>
+    <audio id="buttonhover" src="../assests/audios/hovvers.mp3"></audio>
+    
+    <script>
+        function playclick() {
+            var audio = document.getElementById('buttonudio');
+            audio.play();
+        }
+
+        function playhover() {
+            var audio = document.getElementById('buttonhover');
+            audio.play();
+        }
+    </script>
+    
+
+    <!-- Popup message for small screens -->
+    <div id="popupMessage" class="popup-message">
+        <p>Please switch to a desktop for the best experience.</p>
+    </div> 
+    <script>
+        // Function to display popup message on small screens
+        function displayPopupMessage() {
+            // Check if the screen width is less than 768 pixels (small screens)
+            if (window.innerWidth < 768) {
+                var popup = document.getElementById('popupMessage');
+                popup.style.display = 'block'; // Display the popup message
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = function() {
+            displayPopupMessage();
+        };
+    </script>
+ <div class="info_box">
+     <div class="info-title">INTRODUCTION</div>
+    
+   <div class="infoone">
+    <div class="lisaimage" src="play-button.png"   style="cursor: not-allowed;"></div>
+    <p class="infoIntro" id="changeContent"> Welcome to the Virtual Labs!<br>Explore MAE Antenna Labs, crafted by Vidyalankar Technology, where learning meets innovation. <br> <br> <br> <br> <br> <br> <br> <br>Click Continue To Proceed&nbsp;&nbsp;&nbsp;....................... </p>   
+        <!-- <audio id="audioPlayer1" src="../assests/audios/audio1.mp3"></audio> -->
+        <audio id="audioPlayer2" src="../assests/audios/audio2.mp3"></audio>
+        <audio id="audioPlayer3" src="../assests/audios/audio3.mp3"></audio>
+        <script>
+            // Wait for the document to finish loading
+            document.addEventListener("DOMContentLoaded", function() {
+                // Get a reference to the audioPlayer3 element
+                var audioPlayer1 = document.getElementById("audioPlayer1");
+        
+                // Play audioPlayer3
+                audioPlayer1.play();
+            });
+        </script>
+ </div>
+
+
+ <div class="buttons">
+    <button class="restart" onclick = "updateHTML()" >Continue</button>
+</div>
+    
+
+
+ <!-- Inside this JavaScript file I've inserted js functions -->
+ <script src="../javascript/introductionscript.js"></script>
+
+ <audio id="autoPlayAudio" src="../assests/audios/cliccks.mp3" autoplay></audio>
+    </body>
+</html>

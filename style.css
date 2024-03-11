@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100");
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Roboto';
+  background: #000000;
+}
+.loading{
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text{
+  color: #FFF;
+
+text-align: center;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 700;
+line-height: 133%;
+  width: 90rem;
+  font-size: 80px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+.subtext{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+  width: 90rem;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+.add{
+  animation: animate .7s ease-in-out .1s;
+}
+@keyframes animate {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.2;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.progress-bar{
+ position: absolute;
+ margin-left: 17rem;
+  padding: 90px;
+  width: 906px;
+  height: 29px;
+  background: #000000;
+  border-color: rgb(255, 255, 255);
+  border-style:groove;
+  border-radius: 13px;
+  padding: 3px;
+  box-sizing: border-box;
+}
+.progress{
+  width: 203px;
+  height: 19px;
+  background: #00fff6;
+  border-radius: 13px;
+}
+
