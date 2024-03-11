@@ -14,7 +14,7 @@ function animate() {
 
     // Redirect after 4 seconds
     setTimeout(function() {
-      window.location.href = "/html/Introduction.html";
+      window.location.href = "./html/Introduction.html";
     }, 4000); // 4 seconds in milliseconds
   } else {
     per = per + 4;
